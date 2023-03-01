@@ -12,10 +12,10 @@ Globals:
     MemorySize: 128
 
 Parameters:
-  TenantIdParameter:
-    Type: String
-    Default: pooled
-    Description: Tenant ID for the stack
+  Vpc:
+    Description: Vpc Id
+    Type: AWS::EC2::VPC::id
+    Default: :vpc-096a495be5c11ff39
 
 Resources:
   HelloWorldFunction:
@@ -37,11 +37,20 @@ Resources:
     Type: AWS::RDS::DBInstance
     Properties:
       AllocatedStorage: "20"
+      AllowMajorVersionUpgrade: true
+      AutoMinorVersionUpgrade: true
       DBInstanceClass: db.t3.micro
       Engine: Postgres
       DBInstanceIdentifier: !Ref AWS::StackName
+      EngineVersion: 14.6
       MasterUsername: postgres
       MasterUserPassword: postgres
+      MultiAZ: false
+      Port: "5432"
+      PubliclyAccessible: true
+      StorageType: gp2
+      VPCSecurityGroups:
+        - !Ref Vpc
     DeletionPolicy: Snapshot
 
 Outputs:
