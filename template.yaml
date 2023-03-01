@@ -14,8 +14,8 @@ Globals:
 Parameters:
   VpcId:
     Description: Vpc
-    Type: AWS::EC2::VPC::Id
-    Default: :vpc-096a495be5c11ff39
+    Type: AWS::EC2::VPC::vpc-096a495be5c11ff39
+    # Default: :vpc-096a495be5c11ff39
 
 Resources:
   HelloWorldFunction:
