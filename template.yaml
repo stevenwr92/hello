@@ -12,7 +12,7 @@ Globals:
     MemorySize: 128
 
 Parameters:
-  Vpc:
+  VpcId:
     Description: Vpc
     Type: AWS::EC2::VPC::Id
     Default: :vpc-096a495be5c11ff39
@@ -50,7 +50,7 @@ Resources:
       PubliclyAccessible: true
       StorageType: gp2
       VPCSecurityGroups:
-        - !Ref Vpc
+        - !Ref VpcId
     DeletionPolicy: Snapshot
 
 Outputs:
