@@ -54,7 +54,7 @@ Resources:
       PubliclyAccessible: true
       StorageType: gp2
       VPCSecurityGroups:
-        - Fn::ImportValue: !Sub ${ExportVpcStackName}--development-ximply-vpc
+        - Fn::ImportValue: !Sub ${ExportVpcStackName}-development-ximply-vpc
     DeletionPolicy: Snapshot
 
 Outputs:
