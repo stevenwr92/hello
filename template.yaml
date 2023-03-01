@@ -53,8 +53,7 @@ Resources:
       Port: "5432"
       PubliclyAccessible: true
       StorageType: gp2
-      VPCSecurityGroups:
-        - Fn::ImportValue: !Sub ${ExportVpcStackName}-development-ximply-vpc
+      VPCSecurityGroups: Fn::ImportValue: !Sub ${ExportVpcStackName}-development-ximply-vpc
     DeletionPolicy: Snapshot
 
 Outputs:
