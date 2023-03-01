@@ -11,13 +11,17 @@ Globals:
     Timeout: 3
     MemorySize: 128
 
-Parameters:
-  VpcId:
-    Description: Vpc
-    Type: AWS::EC2::VPC::vpc-096a495be5c11ff39
-    # Default: :vpc-096a495be5c11ff39
-
 Resources:
+  # DatabaseSubnetGroup:
+  #   Type: AWS::RDS::DBSubnetGroup
+  #   Properties:
+  #     DBSubnetGroupDescription: Subnet group for RDS database
+  #     SubnetIds:
+  #       - Fn::ImportValue: !Sub ${ExportVpcStackName}
+  #     Tags:
+  #       - Key:
+  #         Value:
+
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
@@ -50,7 +54,7 @@ Resources:
       PubliclyAccessible: true
       StorageType: gp2
       VPCSecurityGroups:
-        - !Ref VpcId
+        - Fn::ImportValue: !Sub ${ExportVpcStackName}--development-ximply-vpc
     DeletionPolicy: Snapshot
 
 Outputs:
