@@ -39,7 +39,7 @@ Resources:
       AllocatedStorage: "20"
       DBInstanceClass: db.t3.micro
       Engine: Postgres
-      DBInstanceIdentifier: !Join ["-", [Product, !Ref TenantIdParameter]]
+      DBInstanceIdentifier: ${AWS::StackName}
       MasterUsername: postgres
       MasterUserPassword: postgres
     DeletionPolicy: Snapshot
