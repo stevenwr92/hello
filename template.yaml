@@ -13,8 +13,8 @@ Globals:
 
 Parameters:
   Vpc:
-    Description: Vpc Id
-    Type: AWS::EC2::VPC::id
+    Description: Vpc
+    Type: AWS::EC2::VPC::Id
     Default: :vpc-096a495be5c11ff39
 
 Resources:
