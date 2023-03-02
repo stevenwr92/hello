@@ -55,6 +55,7 @@ Resources:
       StorageType: gp2
       VPCSecurityGroups:
         - sg-0dc1004fcd2cc9c26
+      DBSubnetGroupName: dev_subnet_rds_vpc
     DeletionPolicy: Snapshot
 
 Outputs:
