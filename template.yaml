@@ -54,7 +54,7 @@ Resources:
       PubliclyAccessible: true
       StorageType: gp2
       VPCSecurityGroups:
-        - AWS::EC2::SecurityGroup::sg-0dc1004fcd2cc9c26
+        - AWS::EC2::VPC::vpc-096a495be5c11ff39
     DeletionPolicy: Snapshot
 
 Outputs:
