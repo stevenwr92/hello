@@ -53,7 +53,8 @@ Resources:
       Port: "5432"
       PubliclyAccessible: true
       StorageType: gp2
-      VPCSecurityGroups: AWS::EC2::SecurityGroup::sg-0dc1004fcd2cc9c26
+      VPCSecurityGroups:
+        - AWS::EC2::SecurityGroup::sg-0dc1004fcd2cc9c26
     DeletionPolicy: Snapshot
 
 Outputs:
