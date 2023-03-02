@@ -53,8 +53,7 @@ Resources:
       Port: "5432"
       PubliclyAccessible: true
       StorageType: gp2
-      # VPCSecurityGroups:
-      #   - Fn::ImportValue: !Sub ${ExportVpcStackName}-development-ximply-vpc
+      VPCSecurityGroups: AWS::EC2::SecurityGroup::sg-0dc1004fcd2cc9c26
     DeletionPolicy: Snapshot
 
 Outputs:
